@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Get Weather</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="humidity_text">Humidity:</string>
+    <string name="weather_description_text">Weather Description:</string>
+    <string name="feels_like_text">Feels Like:</string>
+    <string name="change_city">Change City</string>
+    <string name="your_city">Your city…</string>
+    <string name="invalid_city_toast">Invalid city name. Please try again. Remember to only use letters.</string>
+    <string name="change_city_button_description">Button to change the city to display weather</string>
+    <string name="confirm_city_change_button_description">Button to confirm the city change.</string>
+</resources>

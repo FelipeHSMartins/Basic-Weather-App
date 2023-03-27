@@ -1,0 +1,16 @@
+
+<resources>
+    <color name="day_background">#75d1ff</color>
+    <color name="day_primary">#d9dcd9</color>
+    <color name="day_onBackground">#003548</color>
+    <color name="day_PrimarySurface">#004d67</color>
+    <color name="day_onPrimarySurface">#c2e8ff</color>
+    <color name="day_onPrimary">#021125</color>
+    <color name="night_background">#6052a6</color>
+    <color name="night_onBackground">#ffffff</color>
+    <color name="night_primary">#6c5f8d</color>
+    <color name="night_PrimarySurface">#e6deff</color>
+    <color name="night_onPrimarySurface">#1c0161</color>
+    <color name="night_onPrimary">#ffffff</color>
+
+</resources>

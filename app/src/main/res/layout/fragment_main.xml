@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mainViewModel"
+            type="com.example.getweather.ui.mainScreen.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.mainScreen.MainFragment">
+
+        <TextView
+            android:id="@+id/temperature_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="@{mainViewModel.weatherInfo.temperature}"
+            android:textSize="96sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="27°C" />
+
+        <TextView
+            android:id="@+id/humidity_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/humidity_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.45"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/humidity_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:text="@{mainViewModel.weatherInfo.humidity}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/humidity_text"
+            app:layout_constraintStart_toEndOf="@+id/humidity_text"
+            tools:text="90%" />
+
+        <TextView
+            android:id="@+id/weather_description_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{mainViewModel.weatherInfo.weatherDescription}"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toTopOf="@+id/temperature_value"
+            app:layout_constraintEnd_toEndOf="@+id/temperature_value"
+            app:layout_constraintStart_toStartOf="@+id/temperature_value"
+            tools:text="Partly cloudy" />
+
+        <TextView
+            android:id="@+id/feels_like_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/feels_like_text"
+            app:layout_constraintEnd_toEndOf="@+id/temperature_value"
+            app:layout_constraintHorizontal_bias="0.45"
+            app:layout_constraintStart_toStartOf="@+id/temperature_value"
+            app:layout_constraintTop_toBottomOf="@+id/temperature_value" />
+
+        <TextView
+            android:id="@+id/feels_like_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:text="@{mainViewModel.weatherInfo.feelsLike}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/feels_like_text"
+            app:layout_constraintStart_toEndOf="@+id/feels_like_text"
+            tools:text="30°C" />
+
+        <TextView
+            android:id="@+id/location_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto"
+            android:text="@{mainViewModel.weatherInfo.location}"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Uberaba, Minas Gerais" />
+
+        <ImageButton
+            android:id="@+id/change_city_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/change_city_button_description"
+            app:layout_constraintStart_toEndOf="@+id/location_value"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_edit_location_24" />
+
+        <EditText
+            android:id="@+id/edit_city_name_edittext"
+            android:layout_width="169dp"
+            android:layout_height="49dp"
+            android:background="@drawable/rounded_style"
+            android:backgroundTint="?attr/colorSurface"
+            android:ems="10"
+            android:fontFamily="@font/roboto"
+            android:gravity="center"
+            android:hint="@string/your_city"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textColor="?attr/colorOnSurface"
+            android:textColorHint="?attr/colorOnSurface"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/weather_description_value"
+            app:layout_constraintEnd_toEndOf="@+id/location_value"
+            app:layout_constraintStart_toStartOf="@+id/location_value"
+            app:layout_constraintTop_toBottomOf="@+id/change_city_button"
+            app:layout_constraintVertical_bias="0.111"
+            tools:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/confirm_city_change_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/confirm_city_change_button_description"
+            android:src="@drawable/ic_baseline_done_outline_24"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/weather_description_value"
+            app:layout_constraintStart_toEndOf="@+id/edit_city_name_edittext"
+            app:layout_constraintTop_toBottomOf="@+id/change_city_button"
+            app:layout_constraintVertical_bias="0.111"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

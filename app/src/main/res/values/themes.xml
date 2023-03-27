@@ -1,0 +1,14 @@
+
+<resources>
+    <style name="GetWeather" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:background">@color/day_background</item>
+        <item name="android:textColor">@color/day_onBackground</item>
+        <item name="android:textSize">18dp</item>
+        <item name="colorPrimary">@color/day_primary</item>
+        <item name="colorOnBackground">@color/day_onBackground</item>
+        <item name="colorOnPrimary">@color/day_onPrimary</item>
+        <item name="fontFamily">@font/roboto</item>
+        <item name="colorSurface">@color/day_PrimarySurface</item>
+        <item name="colorOnSurface">@color/day_onPrimarySurface</item>
+    </style>
+</resources>
